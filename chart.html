@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoring System</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+</head>
+<body>
+  <div style="padding 10; width:45%;">
+    <canvas id="myChart" width="500" height="300"></canvas>
+	</div>
+  <script>
+
+    var ctx = document.getElementById("myChart");
+    var data = {
+
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+            {
+                label: "Sensor",
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(75,192,192,0.4)",
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [65, 59, 80, 81, 56, 55, 40],
+            },   {
+                  label: "Sensor",
+                  fill: false,
+                  lineTension: 0.1,
+                  backgroundColor: "rgba(0,0,220,0.4)",
+                  borderColor: "blue",
+                  borderCapStyle: 'butt',
+                  borderDash: [],
+                  borderDashOffset: 0.0,
+                  borderJoinStyle: 'miter',
+                  pointBorderColor: "blue",
+                  pointBackgroundColor: "#fff",
+                  pointBorderWidth: 1,
+                  pointHoverRadius: 5,
+                  pointHoverBackgroundColor: "blue",
+                  pointHoverBorderColor: "rgba(220,220,220,1)",
+                  pointHoverBorderWidth: 2,
+                  pointRadius: 1,
+                  pointHitRadius: 10,
+                  data: [67, 60, 75, 85, 60, 50, 45],
+              }
+        ]
+    };
+
+
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+    });
+
+
+
+  </script>
+</body>
+</html>
