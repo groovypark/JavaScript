@@ -30,10 +30,11 @@
     <div class="container"></div>
     <script>
         function createConfig(gridlines, title) {
+          var d = new Date();
             return {
                 type: 'line',
                 data: {
-                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    labels: [d.getHours()-5, d.getHours()-4,d.getHours()-3,d.getHours()-2,d.getHours()-1,d.getHours()+"(현재시각)"],
                     datasets: [{
                         label: "My First dataset",
                         backgroundColor: window.chartColors.red,
@@ -80,32 +81,27 @@
                     display: true
                 }
             }, {
-                title: 'Display: false',
+                title: 'Display: true',
                 gridLines: {
-                    display: false
+                    display: true
                 }
             }, {
-                title: 'Display: false, no border',
+                title: 'Display: true',
                 gridLines: {
-                    display: false,
-                    drawBorder: false
+                    display: true
                 }
             }, {
-                title: 'DrawOnChartArea: false',
+                title: 'Display: true',
                 gridLines: {
-                    display: true,
-                    drawBorder: true,
-                    drawOnChartArea: false,
+                    display: true
                 }
             }, {
-                title: 'DrawTicks: false',
+                title: 'Display: true',
                 gridLines: {
-                    display: true,
-                    drawBorder: true,
-                    drawOnChartArea: true,
-                    drawTicks: false,
+                    display: true
                 }
-            }].forEach(function(details) {
+            }
+            ].forEach(function(details) {
                 var div = document.createElement('div');
                 div.classList.add('chart-container');
 
